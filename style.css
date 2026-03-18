@@ -1,41 +1,119 @@
+/* GERAL */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #eef2f7;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
+/* HEADER */
 header {
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: white;
   text-align: center;
-  margin-bottom: 20px;
+  padding: 25px 20px 15px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* NAVEGAÇÃO */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 8px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* MAIN */
+main {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FORMULÁRIO */
 form {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-input, select, button {
-  padding: 8px;
-  border-radius: 5px;
+input, select {
+  padding: 10px 14px;
+  border-radius: 8px;
   border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: white;
 }
 
-button {
+input:focus, select:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+}
+
+/* BOTÃO ADICIONAR */
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1a73e8;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
+button[type="submit"]:hover {
+  background-color: #1558b0;
+}
+
+/* BUSCA */
 #busca {
   display: block;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 10px auto;
+  width: 320px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
 }
 
+/* CONTADOR */
 #contador {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: bold;
+  color: #444;
+  font-size: 15px;
 }
 
 /* COLUNAS */
@@ -46,41 +124,100 @@ button {
 }
 
 .coluna {
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
   width: 30%;
   min-height: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .coluna h2 {
   text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eef2f7;
 }
 
 /* TAREFA */
 .tarefa {
-  background: white;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  transition: transform 0.2s;
+  background: #f8faff;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border-left: 4px solid #1a73e8;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .tarefa:hover {
   transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.tarefa h3 {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.tarefa p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* BOTÕES DAS TAREFAS */
+.tarefa button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.tarefa button:hover {
+  opacity: 0.85;
+}
+
+.btn-concluir {
+  background-color: #28a745;
+}
+
+.btn-editar {
+  background-color: #ffc107;
+  color: #212529 !important;
+}
+
+.btn-excluir {
+  background-color: #dc3545;
 }
 
 /* RODAPÉ */
 footer {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  padding: 15px;
-  background-color: #f1f1f1;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #1a73e8;
+  color: white;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
 }
 
 footer a {
-  color: #007bff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
@@ -88,7 +225,8 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-/* RESPONSIVIDADE - adapta o layout para telas menores */
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   #colunas {
     flex-direction: column;
@@ -104,6 +242,10 @@ footer a:hover {
   }
 
   input, select, button {
+    width: 80%;
+  }
+
+  #busca {
     width: 80%;
   }
 }
