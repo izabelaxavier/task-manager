@@ -17,6 +17,8 @@ Projeto desenvolvido como atividade acadêmica com o objetivo de praticar concei
 
 🔗 Acesse o projeto online:  
 https://izabelaxavier.github.io/lista-de-tarefas/
+🔗 Acesse um vídeo demonstração do projeto:
+https://drive.google.com/file/d/13pBmTzCaEZbIPzxt59ALHWR051vmE54T/view?usp=drive_link
 
 ## 🛠️ Tecnologias utilizadas
 
