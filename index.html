@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Gerenciador de Tarefas</h1>
+</header>
+
+<main>
+
+  <section>
+    <form id="form-tarefa">
+      <input type="text" id="titulo" placeholder="Título" required>
+      <input type="text" id="descricao" placeholder="Descrição" required>
+
+      <select id="prioridade">
+        <option value="Baixa">Baixa</option>
+        <option value="Média">Média</option>
+        <option value="Alta">Alta</option>
+      </select>
+
+      <button type="submit">Adicionar</button>
+    </form>
+  </section>
+
+  <section>
+    <input type="text" id="busca" placeholder="Buscar tarefa...">
+  </section>
+
+  <p id="contador"></p>
+
+  <section id="colunas">
+    <div class="coluna">
+      <h2>Baixa</h2>
+      <div id="baixa"></div>
+    </div>
+
+    <div class="coluna">
+      <h2>Média</h2>
+      <div id="media"></div>
+    </div>
+
+    <div class="coluna">
+      <h2>Alta</h2>
+      <div id="alta"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    Desenvolvido por 
+    <a href="https://github.com/izabelaxavier" target="_blank">
+      Izabela Xavier
+    </a> © 2026
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
