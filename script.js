@@ -1,9 +1,12 @@
+// Carrega tarefas salvas no navegador
 let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
+// Salva as tarefas no localStorage
 function salvar() {
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
+// Renderiza as tarefas filtradas nas colunas por prioridade
 function renderizarLista(lista) {
   const baixa = document.getElementById("baixa");
   const media = document.getElementById("media");
@@ -42,9 +45,9 @@ function renderizarLista(lista) {
       <p><strong>Data:</strong> ${t.data}</p>
       <p><strong>Status:</strong> ${t.status}</p>
 
-      <button onclick="concluir(${t.id})">Concluir</button>
-      <button onclick="editar(${t.id})">Editar</button>
-      <button onclick="excluir(${t.id})">Excluir</button>
+      <button class="btn-concluir" onclick="concluir(${t.id})">Concluir</button>
+      <button class="btn-editar" onclick="editar(${t.id})">Editar</button>
+      <button class="btn-excluir" onclick="excluir(${t.id})">Excluir</button>
     `;
 
     if (t.status === "Concluída") {
@@ -67,6 +70,7 @@ function renderizar() {
 
 const form = document.getElementById("form-tarefa");
 
+// Evento de submit do formulário — adiciona nova tarefa
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -94,6 +98,7 @@ form.addEventListener("submit", (e) => {
   form.reset();
 });
 
+// Marca uma tarefa como concluída
 function concluir(id) {
   const tarefa = tarefas.find(t => t.id === id);
   tarefa.status = "Concluída";
@@ -101,12 +106,14 @@ function concluir(id) {
   renderizar();
 }
 
+// Exclui uma tarefa pelo id
 function excluir(id) {
   tarefas = tarefas.filter(t => t.id !== id);
   salvar();
   renderizar();
 }
 
+// Edita o título e descrição de uma tarefa existente
 function editar(id) {
   const tarefa = tarefas.find(t => t.id === id);
 
@@ -121,6 +128,7 @@ function editar(id) {
   }
 }
 
+// Filtra tarefas em tempo real conforme o usuário digita na busca
 document.getElementById("busca").addEventListener("input", (e) => {
   const valor = e.target.value.toLowerCase();
 
